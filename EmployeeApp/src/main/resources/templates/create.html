@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create Employee</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <div class="container">
+        <h1>Create New Employee</h1>
+
+        <!-- Display general error -->
+        <div th:if="${error}" class="error" th:text="${error}"></div>
+
+        <form th:action="@{/create}" th:object="${employee}" method="post">
+            <div class="form-group">
+                <label>Name:</label>
+                <input type="text" th:field="*{name}" placeholder="e.g., John Doe" required/>
+                <small style="color:gray; display:block; margin-top:4px;">Only letters and up to 2 spaces allowed.</small>
+            </div>
+            <div class="form-group">
+                <label>Age:</label>
+                <input type="number" th:field="*{age}" min="18" max="60" placeholder="18-60" required/>
+            </div>
+            <div class="form-group">
+                <label>Designation:</label>
+                <input type="text" th:field="*{designation}" placeholder="trainer / tester / programmer" required/>
+                <small style="color:gray; display:block; margin-top:4px;">(trainer, tester, programmer)</small>
+            </div>
+            <button type="submit">Next</button>
+        </form>
+        <br>
+        <a href="/" class="back-link">← Back to menu</a>
+    </div>
+</body>
+</html>

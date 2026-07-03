@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Confirm</title>
+	<link rel="stylesheet" th:href="@{/css/styles.css}">
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        .details { background: #f0f0f0; padding: 15px; border-radius: 5px; }
+        .btn { margin: 5px; padding: 8px 16px; }
+    </style>
+</head>
+<body>
+    <h1>Confirm Employee Details</h1>
+    <div class="details">
+        <p><strong>Name:</strong> <span th:text="${employee.name}"></span></p>
+        <p><strong>Age:</strong> <span th:text="${employee.age}"></span></p>
+        <p><strong>Designation:</strong> <span th:text="${employee.designation}"></span></p>
+        <p><strong>Salary:</strong> <span th:text="${employee.salary}"></span></p>
+    </div>
+    <p>Do you want to save this employee?</p>
+
+    <form th:action="@{/confirm}" th:object="${employee}" method="post">
+        <input type="hidden" th:field="*{name}" />
+        <input type="hidden" th:field="*{age}" />
+        <input type="hidden" th:field="*{designation}" />
+        <input type="hidden" th:field="*{salary}" />
+        <button type="submit" name="action" value="yes" class="btn" style="background:green; color:white;">Yes</button>
+        <button type="submit" name="action" value="no" class="btn" style="background:red; color:white;">No</button>
+    </form>
+    <br>
+    <a href="/">← Cancel and go to menu</a>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Success</title>
+	<link rel="stylesheet" th:href="@{/css/styles.css}">
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        .success { color: green; font-size: 1.2em; }
+    </style>
+</head>
+<body>
+    <h1 class="success" th:text="${message}"></h1>
+    <br>
+    <a href="/">← Back to menu</a>
+</body>
+</html>

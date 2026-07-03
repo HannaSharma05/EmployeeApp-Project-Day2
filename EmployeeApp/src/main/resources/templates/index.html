@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>👔 Employee Management System</h1>
+            <p class="subtitle">Manage your workforce with ease!</p>
+        </div>
+
+        <ul class="menu-list">
+            <li>
+                <a href="/create" class="menu-link">
+                    <span class="icon">➕</span>
+                    <span class="text">Create Employee</span>
+                    <span class="arrow">→</span>
+                </a>
+            </li>
+            <li>
+                <a href="/display" class="menu-link">
+                    <span class="icon">📋</span>
+                    <span class="text">Display All Employees</span>
+                    <span class="arrow">→</span>
+                </a>
+            </li>
+            <li>
+                <a href="/raise" class="menu-link">
+                    <span class="icon">📈</span>
+                    <span class="text">Raise Salary</span>
+                    <span class="arrow">→</span>
+                </a>
+            </li>
+            <li>
+                <a href="/exit" class="menu-link">
+                    <span class="icon">🚪</span>
+                    <span class="text">Exit</span>
+                    <span class="arrow">→</span>
+                </a>
+            </li>
+        </ul>
+
+       
+    </div>
+</body>
+</html>

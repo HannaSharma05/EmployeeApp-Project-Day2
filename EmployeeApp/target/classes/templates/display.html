@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Display Employees</title>
+	<link rel="stylesheet" th:href="@{/css/styles.css}">
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .no-data { color: gray; }
+    </style>
+</head>
+<body>
+    <h1>Employee List</h1>
+
+    <div th:if="${employees.isEmpty()}" class="no-data">
+        No employees found. <a href="/create">Create one now.</a>
+    </div>
+
+    <table th:unless="${employees.isEmpty()}">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Designation</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="emp : ${employees}">
+                <td th:text="${emp.id}"></td>
+                <td th:text="${emp.name}"></td>
+                <td th:text="${emp.age}"></td>
+                <td th:text="${emp.designation}"></td>
+                <td th:text="${emp.salary}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <a href="/">← Back to menu</a>
+</body>
+</html>
